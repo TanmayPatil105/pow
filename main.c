@@ -14,8 +14,8 @@
 
 int main()
 {
-  uint64_t fact = 1;         /* smallest factorial of a positive number */
-  uint64_t mgk[B] = { 0 };   /* our magic array */
+  uint64_t fact = 1;               /* smallest factorial of a positive number */
+  uint64_t mgk[B] = { [0] = 1 };   /* our magic array */
 
   /*
    * 0 ^ 0 = 1;
@@ -48,10 +48,6 @@ int main()
           /* assign copied value to prev */
           prev = dup;
         }
-
-      /* calculate factorial of i and put at the last index */
-      fact *= i;
-      mgk[i - 1] = fact;
     }
 
   for (int i = 0; i < A; i++)
