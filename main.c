@@ -62,7 +62,7 @@ int main()
       for (int j = 0; j < B - 1; j++)
         {
           /* clone the value from next index and
-					 * add it self's value */
+           * add it self's value */
           mgk[j] += mgk[j + 1]; 
         }
     }
