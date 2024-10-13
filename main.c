@@ -14,7 +14,6 @@
 
 int main()
 {
-  uint64_t fact = 1;               /* smallest factorial of a positive number */
   uint64_t mgk[B] = { [0] = 1 };   /* our magic array */
 
   /*
