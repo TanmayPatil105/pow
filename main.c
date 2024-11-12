@@ -9,12 +9,14 @@
  * Space complexity: O (B)
  * ---------------------------- */
 
-#define A 5
-#define B 12
+#define A 2
+#define B 64
+
+void print_mgk (unsigned long long *mgk);
 
 int main()
 {
-  uint64_t mgk[B] = { [0] = 1 };   /* our magic array */
+  unsigned long long mgk[B] = { [0] = 1 };   /* our magic array */
 
   /*
    * 0 ^ 0 = 1;
@@ -22,7 +24,7 @@ int main()
    *
    * 0 as A is not handled
    */
-  uint64_t pow = 0;
+  unsigned long long pow = 0;
 
   for (int i = 1; i <= B; i++)
     {
@@ -31,13 +33,13 @@ int main()
        * which will be used to calculate the value of j+1 th index
        *
        * Keep a copy of the value at j-1 th index */
-      uint64_t prev = 1;
+      unsigned long long prev = 1;
 
       for (int j = 1; j < i; j++)
         {
           /* copy the value at jth index which will be used by
            * j+1 th index in the next iteration */
-          uint64_t dup = mgk[j];
+          unsigned long long dup = mgk[j];
 
           /* update value is equal to 
            * product of sum of old value and old value at j - 1 th index
@@ -62,7 +64,19 @@ int main()
         }
     }
 
-  printf ("pow (%d, %d) = %ld\n", A, B, pow);
+  printf ("pow (%d, %d) = %llu\n", A, B, pow);
 
   return 0;
+}
+
+void
+print_mgk (unsigned long long *mgk)
+{
+  printf ("[ ");
+  for (int i = 0; i < B; i++)
+    {
+      printf ("%lld ,", mgk[i]);
+    }
+
+  printf (" ]\n");
 }
