@@ -15,7 +15,13 @@
  * ---------------------------- */
 
 #define A 2
-#define B 256
+#define B 10000
+
+#define LOG(str) \
+    do { \
+      printf ("%s\n", str); \
+      fflush(stdout); \
+    } while (0);
 
 int main()
 {
@@ -61,7 +67,16 @@ int main()
 
           /* assign copied value to prev */
           mpz_set (prev, dup);
+
+          mpz_clear (dup);
+          mpz_clear (temp1);
+          mpz_clear (temp2);
+          mpz_clear (temp3);
         }
+
+      mpz_clear (prev);
+      if (i % 100 == 0)
+        LOG ("quack");
     }
 
   for (int i = 0; i < A; i++)
@@ -78,6 +93,13 @@ int main()
     }
 
   gmp_printf ("pow (%d, %d) = %Zd\n", A, B, pow);
+
+  for (int i = 0; i < B; i++)
+    {
+      mpz_clear (mgk[i]);
+    }
+
+  mpz_clear (pow);
 
   return 0;
 }
