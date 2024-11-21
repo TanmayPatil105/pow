@@ -92,10 +92,8 @@ Executed in   83.08 mins    fish           external
 ### With/Without using OpenMP
 ```console
 # with
-________________________________________________________
 Executed in  447.67 secs    fish           external
 
 # without
-Executed in  814.37 secs    fish           external
-
+Executed in  666.89 secs    fish           external
 ```
