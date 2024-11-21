@@ -88,3 +88,14 @@ Executed in   83.08 mins    fish           external
    usr time   82.92 mins    1.31 millis   82.92 mins
    sys time    0.12 mins    2.14 millis    0.12 mins
 ```
+
+### With/Without using OpenMP
+```console
+# with
+________________________________________________________
+Executed in  447.67 secs    fish           external
+
+# without
+Executed in  814.37 secs    fish           external
+
+```
